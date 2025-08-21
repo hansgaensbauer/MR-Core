@@ -1,0 +1,5 @@
+pypulseq
+numpy
+scipy
+pyserial
+importlib

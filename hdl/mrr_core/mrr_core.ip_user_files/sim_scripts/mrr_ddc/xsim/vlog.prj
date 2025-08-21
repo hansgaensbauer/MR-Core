@@ -1,0 +1,15 @@
+verilog xil_defaultlib  \
+"../../../bd/mrr_ddc/ip/mrr_ddc_xlslice_0_1/sim/mrr_ddc_xlslice_0_1.v" \
+"../../../bd/mrr_ddc/ip/mrr_ddc_xlslice_0_2/sim/mrr_ddc_xlslice_0_2.v" \
+"../../../bd/mrr_ddc/sim/mrr_ddc.v" \
+"../../../bd/mrr_ddc/ip/mrr_ddc_xlslice_0_5/sim/mrr_ddc_xlslice_0_5.v" \
+"../../../bd/mrr_ddc/ip/mrr_ddc_xlslice_1_4/sim/mrr_ddc_xlslice_1_4.v" \
+"../../../bd/mrr_ddc/ip/mrr_ddc_xlslice_2_2/sim/mrr_ddc_xlslice_2_2.v" \
+"../../../bd/mrr_ddc/ip/mrr_ddc_xlslice_0_6/sim/mrr_ddc_xlslice_0_6.v" \
+"../../../bd/mrr_ddc/ip/mrr_ddc_xlslice_1_5/sim/mrr_ddc_xlslice_1_5.v" \
+"../../../bd/mrr_ddc/ip/mrr_ddc_xlslice_2_3/sim/mrr_ddc_xlslice_2_3.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

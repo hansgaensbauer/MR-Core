@@ -1,0 +1,123 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Mar 29 10:00:21 2024
+# Process ID: 20916
+# Current directory: C:/Users/hansg/Documents/MIT/Hanlab/MR-Core/hdl/mrr_core
+# Command line: vivado.exe -mode tcl
+# Log file: C:/Users/hansg/Documents/MIT/Hanlab/MR-Core/hdl/mrr_core/vivado.log
+# Journal file: C:/Users/hansg/Documents/MIT/Hanlab/MR-Core/hdl/mrr_core\vivado.jou
+# Running On: DESKTOP-GH6A8S7, OS: Windows, CPU Frequency: 2803 MHz, CPU Physical cores: 4, Host memory: 16837 MB
+#-----------------------------------------------------------
+open_project open_project C:/Users/hansg/Documents/MIT/Hanlab/MR-Core/hdl/mrr_core/mrr_core.xpr
+open_project C:/Users/hansg/Documents/MIT/Hanlab/MR-Core/hdl/mrr_core/mrr_core.xpr
+launch_simulation
+source fmc_nand_tb.tcl
+ls
+launch_simulation
+close_sim
+launch_simulation
+source fmc_nand_tb.tcl
+close sim
+close_sim
+launch_simulation
+launch_simulation
+source fmc_nand_tb.tcl
+close_Sim
+slose_sim
+close_sim
+launch_simulation
+source fmc_nand_tb.tcl
+close_sim
+launch_simulation
+source fmc_nand_tb.tcl
+relaunch_simulation
+relaunch_sim
+start_gui
+close_sim
+create_bd_design "mrr_ddc"
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:dds_compiler:6.0 dds_compiler_0
+endgroup
+set_property -dict [list \
+  CONFIG.DATA_Has_TLAST {Not_Required} \
+  CONFIG.Has_Phase_Out {false} \
+  CONFIG.Latency {6} \
+  CONFIG.M_DATA_Has_TUSER {Not_Required} \
+  CONFIG.Noise_Shaping {None} \
+  CONFIG.Output_Frequency1 {0} \
+  CONFIG.Output_Selection {Sine_and_Cosine} \
+  CONFIG.Output_Width {16} \
+  CONFIG.PINC1 {0} \
+  CONFIG.Parameter_Entry {Hardware_Parameters} \
+  CONFIG.PartsPresent {SIN_COS_LUT_only} \
+  CONFIG.Phase_Width {16} \
+  CONFIG.S_PHASE_Has_TUSER {Not_Required} \
+] [get_bd_cells dds_compiler_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:cmpy:6.0 cmpy_0
+endgroup
+set_property location {1 -74 -126} [get_bd_cells cmpy_0]
+set_property location {2 386 -135} [get_bd_cells dds_compiler_0]
+set_property location {2 456 -140} [get_bd_cells dds_compiler_0]
+set_property location {0.5 -188 -150} [get_bd_cells dds_compiler_0]
+set_property location {1 -215 -140} [get_bd_cells dds_compiler_0]
+set_property -dict [list \
+  CONFIG.Latency {2} \
+  CONFIG.Output_Width {14} \
+  CONFIG.Phase_Width {3} \
+] [get_bd_cells dds_compiler_0]
+set_property location {1 -215 7} [get_bd_cells dds_compiler_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:cic_compiler:4.0 cic_compiler_0
+endgroup
+set_property location {3 417 18} [get_bd_cells cic_compiler_0]
+set_property location {2.5 874 -132} [get_bd_cells cic_compiler_0]
+set_property -dict [list \
+  CONFIG.Clock_Frequency {200.0} \
+  CONFIG.Input_Sample_Frequency {8} \
+] [get_bd_cells cic_compiler_0]
+set_property -dict [list \
+  CONFIG.Output_Width {14} \
+  CONFIG.Phase_Width {8} \
+] [get_bd_cells dds_compiler_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axis_register_slice:1.1 axis_register_slice_0
+endgroup
+set_property location {3 381 14} [get_bd_cells axis_register_slice_0]
+set_property location {1 124 -131} [get_bd_cells dds_compiler_0]
+set_property location {1 187 29} [get_bd_cells axis_register_slice_0]
+delete_bd_objs [get_bd_cells axis_register_slice_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axis_interconnect:2.1 axis_interconnect_0
+endgroup
+delete_bd_objs [get_bd_cells axis_interconnect_0]
+set_property location {1 137 -336} [get_bd_cells dds_compiler_0]
+set_property CONFIG.Output_Width {16} [get_bd_cells dds_compiler_0]
+regenerate_bd_layout
+set_property CONFIG.Output_Width {14} [get_bd_cells dds_compiler_0]
+regenerate_bd_layout
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0
+endgroup
+set_property location {2.5 895 210} [get_bd_cells cic_compiler_0]
+set_property location {0.5 -64 176} [get_bd_cells dds_compiler_0]
+set_property location {2 204 139} [get_bd_cells xlslice_0]
+set_property location {1 -66 248} [get_bd_cells dds_compiler_0]
+set_property location {2 193 459} [get_bd_cells dds_compiler_0]
+set_property location {1 233 259} [get_bd_cells xlslice_0]
+connect_bd_net [get_bd_pins dds_compiler_0/m_axis_data_tdata] [get_bd_pins xlslice_0/Din]
+copy_bd_objs /  [get_bd_cells {xlslice_0}]
+set_property location {1 240 328} [get_bd_cells xlslice_1]
+connect_bd_net [get_bd_pins dds_compiler_0/m_axis_data_tdata] [get_bd_pins xlslice_1/Din]
+copy_bd_objs /  [get_bd_cells {cmpy_0}]
+create_bd_cell -type hier dec_filter
+set_property screensize {226 270} [get_bd_cells dec_filter]
+set_property screensize {307 136} [get_bd_cells dec_filter]
+delete_bd_objs [get_bd_cells cic_compiler_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:cic_compiler:4.0 dec_filter/cic_compiler_0
+endgroup
+save_bd_design

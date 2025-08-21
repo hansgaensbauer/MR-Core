@@ -1,0 +1,25 @@
+{
+	"version": "1.0",
+	"modules": {
+		"mrr_ddc": {
+			"proto_instances": {
+				"/cmpy_1/S_AXIS_B": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "aclk"},
+						"TDATA": { "actual": "s_axis_b_tdata[31:0]"},
+						"TVALID": { "actual": "s_axis_b_tvalid"}
+					}
+				},
+				"/dds_compiler_0/M_AXIS_DATA": {
+					"interface": "xilinx.com:interface:axis:1.0",
+					"ports": {
+						"ACLK": { "actual": "aclk"},
+						"TDATA": { "actual": "m_axis_data_tdata[31:0]"},
+						"TVALID": { "actual": "m_axis_data_tvalid"}
+					}
+				}
+			}
+		}
+	}
+}

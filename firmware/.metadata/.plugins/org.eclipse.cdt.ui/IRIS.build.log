@@ -1,0 +1,10 @@
+15:04:48 **** Incremental Build of configuration Debug for project IRIS ****
+make -j8 all 
+arm-none-eabi-size  IRIS.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4680	     20	   1572	   6272	   1880	IRIS.elf
+Finished building: default.size.stdout
+ 
+
+15:04:48 Build Finished. 0 errors, 0 warnings. (took 290ms)
+

@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mrc"
+version = "1.0.0"
+dependencies = [
+    "pypulseq",
+    "numpy",
+    "scipy",
+    "pyserial",
+    "importlib"
+]
+
+[tool.setuptools.packages.find]
+where = [".","mrc"]
