@@ -1,8 +1,7 @@
-Metadata-Version: 2.1
+Metadata-Version: 2.2
 Name: mrc
-Version: 1.0.0
+Version: 1.0.3
 Requires-Dist: pypulseq
 Requires-Dist: numpy
 Requires-Dist: scipy
 Requires-Dist: pyserial
-Requires-Dist: importlib

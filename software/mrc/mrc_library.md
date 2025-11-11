@@ -176,3 +176,16 @@ Disassemble a .mrc file and pretty-print the result.
 **Parameters:**
 - **`mrcfile`**: (str) - The path to the .mrc file to disassemble. 
 
+# Building the Library
+
+1. Update pyproject.toml
+2. Build the class:
+```
+cd \software\mrc
+py -m buid
+```
+3. Install the class
+    1. Copy the wheel from `mrc\dist` to wherever is convenient for install
+    3. `%pip install mrc-X.X.X-py3-none-any.whl` to install (change to whatever the right path is)
+
+

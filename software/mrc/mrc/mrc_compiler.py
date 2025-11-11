@@ -126,7 +126,7 @@ def compile_sequence(sequence, progfile):
     all_amplitudes = np.array([updates[time][0] for time in updates])
     all_phases = np.array([updates[time][1] for time in updates])
     amplitudes = (np.unique(np.abs(all_amplitudes).astype(np.uint16))) #.astype(np.uint16)
-    phases = np.unique(all_phases/np.pi*2**14).astype(np.int16)
+    phases = np.unique(all_phases/np.pi*2**15).astype(np.int16)
 
     assert len(amplitudes) <= 4
     assert len(phases) <= 4
@@ -138,7 +138,7 @@ def compile_sequence(sequence, progfile):
 
     for time in sorted(updates.keys()):
         _write_delay(time - lasttime)
-        _write_command(int(np.abs(updates[time][0])), int(updates[time][1] / np.pi * 2 ** 14), updates[time][2], updates[time][3], updates[time][4],
+        _write_command(int(np.abs(updates[time][0])), int(updates[time][1] / np.pi * 2 ** 15), updates[time][2], updates[time][3], updates[time][4],
                     amplitudes,
                     phases)
         lasttime = time
@@ -202,7 +202,7 @@ def mrcdump(mrcfile):
         return np.array([int.from_bytes(rsarr[i], "little") for i in range(len(rsarr))])
 
     instructions = _read_bin_file(mrcfile)
-    print("Duration: %d" % int(instructions[0])*16)
+    print("Duration: %d" % (int(instructions[0])*16))
 
     print("Statics:")
     for i in range(4):
