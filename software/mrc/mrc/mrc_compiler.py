@@ -159,8 +159,8 @@ def compile_sequence(sequence, progfile):
                 loopitrs = 0
                 looplen = index[j+1] - index[j]
                 while(j+1 < len(index) and
-                        index[j+1]+looplen < len(contents) and
-                        np.array_equal(contents[index[j]:index[j]+looplen], contents[index[j+1]:index[j+1]+looplen])):
+                        index[j+1]+looplen < len(program) and
+                        np.array_equal(program[index[j]:index[j]+looplen], program[index[j+1]:index[j+1]+looplen])):
                     loopitrs += 1
                     j = j + 1
                 if loopitrs >= 1:
@@ -178,7 +178,7 @@ def compile_sequence(sequence, progfile):
                     program = newcontents
                     break
 
-    program = make_jumps_relative(program)
+    # program = make_jumps_relative(program)
     if isinstance(progfile, str):
         with open(progfile, 'wb') as f:
             for item in header:
