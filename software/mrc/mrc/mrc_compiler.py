@@ -150,8 +150,8 @@ def compile_sequence(sequence, progfile):
     #detecting and stacking loops
     roll_loops = True
     if roll_loops:
-
-        for i in range(len(program)):
+        i = 0
+        while(i < len(program)):
             #calculate matches
             index = np.where(program[i:] == program[i])[0] + i #find matches and mask earlier matches
             if len(index) > 1:
@@ -160,23 +160,26 @@ def compile_sequence(sequence, progfile):
                 looplen = index[j+1] - index[j]
                 while(j+1 < len(index) and
                         index[j+1]+looplen < len(program) and
-                        np.array_equal(program[index[j]:index[j]+looplen], program[index[j+1]:index[j+1]+looplen])):
+                        np.array_equal(program[index[j]:index[j]+looplen], program[index[j+1]:index[j+1]+looplen]) and
+                        loopitrs < 4094):
                     loopitrs += 1
                     j = j + 1
                 if loopitrs >= 1:
-                    for n in range(int((loopitrs-1)/4094)):
-                        #roll the loop
-                        newcontents = np.append(program[0:i], (0b0111 << 12) + 4094)
-                        newcontents = np.append(newcontents, program[i:i+looplen])
-                        newcontents = np.append(newcontents, (0b1011 << 12) + looplen)
-                        newcontents = np.append(newcontents, program[i+(4094+1)*looplen:])
-                        program = newcontents
+                    # loops = np.ceil(loopitrs/4094)
+                    # for n in range(int((loopitrs-1)/4094)):
+                    #     #roll the loop
+
+                    #     newcontents = np.append(program[0:i], (0b0111 << 12) + 4094)
+                    #     newcontents = np.append(newcontents, program[i:i+looplen])
+                    #     newcontents = np.append(newcontents, (0b1011 << 12) + looplen)
+                    #     newcontents = np.append(newcontents, program[i+(4094+1)*looplen:])
+                    #     program = newcontents
                     newcontents = np.append(program[0:i], (0b0111 << 12) + (loopitrs-1)%4094 + 1)
                     newcontents = np.append(newcontents, program[i:i+looplen])
                     newcontents = np.append(newcontents, (0b1011 << 12) + looplen)
-                    newcontents = np.append(newcontents, program[i+(loopitrs%4094+1)*looplen:])
+                    newcontents = np.append(newcontents, program[i+(loopitrs%4095+1)*looplen:])
                     program = newcontents
-                    break
+            i = i + 1
 
     # program = make_jumps_relative(program)
     if isinstance(progfile, str):

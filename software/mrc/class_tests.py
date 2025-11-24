@@ -30,7 +30,7 @@ seq.add_block(pp.make_delay(2e-3))
 seq.add_block(rf90_120)
 seq.add_block(pp.make_delay(2e-3))
 
-# seq = mrc.build_spinecho(4e-3,100e-6,100e-6)
+seq = mrc.build_cpmg(500e-6,6000,50e-6,50e-6)
 
 mrc.compile_sequence(seq, 'repeats.mrc')
 mrc.mrcdump('repeats.mrc')

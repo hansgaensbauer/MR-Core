@@ -3,10 +3,10 @@ import numpy as np
 
 from mrc.system_constants import *
 
-def get_echo_amplitudes(rx_data, num_echoes, te, t90, use_real=False):
-    width = 40
+def get_echo_amplitudes(rx_data, num_echoes, te, t90, use_real=False, width=40, t90_samples = None):
     tr_samples = te*100000
-    t90_samples = int(t90 * fs)
+    if(t90_samples is None):
+        t90_samples = int(t90 * fs)
     mags_abs = np.zeros(num_echoes)
 
     for i in range(num_echoes-1):
