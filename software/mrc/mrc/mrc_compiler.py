@@ -181,7 +181,7 @@ def compile_sequence(sequence, progfile):
                     program = newcontents
             i = i + 1
 
-    # program = make_jumps_relative(program)
+    program = make_jumps_relative(program)
     if isinstance(progfile, str):
         with open(progfile, 'wb') as f:
             for item in header:
