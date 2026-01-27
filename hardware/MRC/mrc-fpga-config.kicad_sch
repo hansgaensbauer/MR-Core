@@ -11577,6 +11577,15 @@
 				)
 			)
 		)
+		(property "MPN" "06035C474KAT4A "
+			(at 232.41 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "cae0d8a3-1fb0-480e-88da-992d1a5ef69e")
 		)
@@ -11712,6 +11721,15 @@
 				)
 			)
 		)
+		(property "MPN" "06035C474KAT4A "
+			(at 200.66 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6408f1ed-1fbd-4eb6-b51b-1d3adc993e38")
 		)
@@ -11779,6 +11797,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "KGM15BR51A475KT "
+			(at 269.24 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -11980,6 +12007,15 @@
 				)
 			)
 		)
+		(property "MPN" "06035C474KAT4A "
+			(at 261.62 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "05736531-b26e-4bcc-8cf2-942a858ad10a")
 		)
@@ -12116,6 +12152,15 @@
 				)
 			)
 		)
+		(property "MPN" "KGM15BR51A475KT "
+			(at 232.41 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "94df5cf7-4e11-4899-a7ab-5667c64cf5ad")
 		)
@@ -12183,6 +12228,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "KGM15BR51A475KT "
+			(at 209.55 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -12317,6 +12371,15 @@
 				)
 			)
 		)
+		(property "MPN" "SDR03EZPD1000 "
+			(at 177.8 55.88 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b7a372d1-130a-478c-addd-a53cf2cd30b2")
 		)
@@ -12386,6 +12449,15 @@
 				)
 			)
 		)
+		(property "MPN" "06035C474KAT4A "
+			(at 201.93 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "cb3a1f1a-1310-41ba-b35b-b5ec36aa06e5")
 		)
@@ -12453,6 +12525,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "06035C474KAT4A "
+			(at 196.85 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -12587,6 +12668,15 @@
 				)
 			)
 		)
+		(property "MPN" "SDR03EZPD1000 "
+			(at 200.66 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3bfb2422-2478-45b3-9954-89d420ceb542")
 		)
@@ -12654,6 +12744,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "06035C474KAT4A "
+			(at 198.12 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -12855,6 +12954,15 @@
 				)
 			)
 		)
+		(property "MPN" "06035C474KAT4A "
+			(at 168.91 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "95b20849-8a12-4018-a110-7be463ffdaae")
 		)
@@ -13054,6 +13162,15 @@
 				)
 			)
 		)
+		(property "MPN" "06035C474KAT4A "
+			(at 176.53 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "f07163e1-c1c0-4c88-a875-329397fbf6a3")
 		)
@@ -13191,6 +13308,15 @@
 				)
 			)
 		)
+		(property "MPN" "KGM15BR51A475KT "
+			(at 236.22 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8006d065-0419-4686-b039-d38521b03a9e")
 		)
@@ -13257,6 +13383,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "XC7A35T-1FTG256C "
+			(at 66.04 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "A10"
@@ -14155,6 +14290,15 @@
 				)
 			)
 		)
+		(property "MPN" "06035C474KAT4A "
+			(at 204.47 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2e75c049-cdd9-4342-b91a-2eb1a3eb0621")
 		)
@@ -14358,6 +14502,15 @@
 				)
 			)
 		)
+		(property "MPN" "KGM15BR51A475KT "
+			(at 213.36 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ea0a54ac-5be6-4324-9f7a-cc036a210719")
 		)
@@ -14425,6 +14578,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "SDR03EZPD4701 "
+			(at 123.19 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -14691,6 +14853,15 @@
 				)
 			)
 		)
+		(property "MPN" "KGM15BR51A475KT "
+			(at 180.34 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c0e84ed9-6797-4d06-aa3a-0456db91f37b")
 		)
@@ -14759,6 +14930,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "ASCKC500NW5X4040 "
+			(at 137.16 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -15032,6 +15212,15 @@
 				)
 			)
 		)
+		(property "MPN" "SDR03EZPD4701 "
+			(at 191.77 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ac35b780-1203-4a14-93c7-c08522329b11")
 		)
@@ -15165,6 +15354,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "06035C474KAT4A "
+			(at 228.6 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -15368,6 +15566,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "SDR03EZPD3300 "
+			(at 114.3 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -15636,6 +15843,15 @@
 				)
 			)
 		)
+		(property "MPN" "KGM15BR51A475KT "
+			(at 184.15 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "cd192f1c-74fe-440f-851a-de9f730ccb26")
 		)
@@ -15772,6 +15988,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "06035C474KAT4A "
+			(at 168.91 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -16038,6 +16263,15 @@
 				)
 			)
 		)
+		(property "MPN" "06035C474KAT4A "
+			(at 254 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "881097aa-4560-44d1-8243-08637a801b12")
 		)
@@ -16236,6 +16470,15 @@
 				)
 			)
 		)
+		(property "MPN" "SDR03EZPD1000 "
+			(at 177.8 53.34 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2146f1f9-7351-4004-915d-5f4d0eccfe01")
 		)
@@ -16370,6 +16613,15 @@
 				)
 			)
 		)
+		(property "MPN" "SDR03EZPD4701 "
+			(at 133.35 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8c612cc1-9fa2-4551-b0bb-97f68c73b0b8")
 		)
@@ -16439,6 +16691,15 @@
 				)
 			)
 		)
+		(property "MPN" "06035C474KAT4A "
+			(at 257.81 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "02b09b10-2564-4de2-b986-586ba4a2a7c0")
 		)
@@ -16505,6 +16766,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "87832-1420 "
+			(at 146.05 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -16612,6 +16882,15 @@
 				)
 			)
 		)
+		(property "MPN" "KGM15BR51A475KT "
+			(at 265.43 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3aa96d14-849a-478d-994b-0e2b0b663d8d")
 		)
@@ -16679,6 +16958,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "06035C474KAT4A "
+			(at 172.72 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -16751,6 +17039,15 @@
 				)
 			)
 		)
+		(property "MPN" "SDR03EZPD4701 "
+			(at 137.16 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2c5aaa15-94c9-4448-86cc-df8971212884")
 		)
@@ -16821,6 +17118,15 @@
 				)
 			)
 		)
+		(property "MPN" "742792641 "
+			(at 25.4 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "aec76407-f7a0-4caa-8771-19ec6aef9c63")
 		)
@@ -16886,6 +17192,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "SDR03EZPD4701 "
+			(at 181.61 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -16955,6 +17270,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "KGM15CR50J476MT "
+			(at 187.96 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -17091,6 +17415,15 @@
 				)
 			)
 		)
+		(property "MPN" "06035C474KAT4A "
+			(at 228.6 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3b8fd6b1-08b4-4383-8525-1105360539ab")
 		)
@@ -17159,6 +17492,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "ASCKC500NW5X4040 "
+			(at 146.05 64.77 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -17294,6 +17636,15 @@
 				)
 			)
 		)
+		(property "MPN" "SDR03EZPD1000 "
+			(at 237.49 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "dfd0dfe2-1584-4ec0-9179-830f0f853090")
 		)
@@ -17359,6 +17710,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "SDR03EZPD4701 "
+			(at 146.05 58.42 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -17557,6 +17917,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "XC7A35T-1FTG256C "
+			(at 73.66 147.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "A10"
@@ -18390,6 +18759,15 @@
 				)
 			)
 		)
+		(property "MPN" "06035C474KAT4A "
+			(at 172.72 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "77318d52-0a79-43d6-88b3-69cfb505b765")
 		)
@@ -18586,6 +18964,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "KGM15BR51A475KT "
+			(at 240.03 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -18853,6 +19240,15 @@
 				)
 			)
 		)
+		(property "MPN" "06035C474KAT4A "
+			(at 205.74 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e55232fb-94db-4d6d-adb0-40731d01fb6d")
 		)
@@ -18919,6 +19315,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "KGM15BR51A475KT "
+			(at 180.34 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -18990,6 +19395,15 @@
 				)
 			)
 		)
+		(property "MPN" "KGM15BR51A475KT "
+			(at 184.15 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "93160516-8427-489b-b7e5-5baa5e07e34a")
 		)
@@ -19059,6 +19473,15 @@
 				)
 			)
 		)
+		(property "MPN" "KGM15BR51A475KT "
+			(at 212.09 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "771ba45b-8608-4fcd-b1a4-4cad47922296")
 		)
@@ -19126,6 +19549,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "06035C474KAT4A "
+			(at 176.53 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -19257,6 +19689,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "SDR03EZPD4701 "
+			(at 186.69 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -19397,6 +19838,15 @@
 				)
 			)
 		)
+		(property "MPN" "06035C474KAT4A "
+			(at 224.79 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2c9d7614-911d-4364-a021-d0e1ac21ebb7")
 		)
@@ -19532,6 +19982,15 @@
 				)
 			)
 		)
+		(property "MPN" "KGM15BR51A475KT "
+			(at 208.28 100.33 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "dde7bbe0-0acf-4d1d-886c-4976f7b13043")
 		)
@@ -19599,6 +20058,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "IS25LP256DRMLETR "
+			(at 217.17 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"

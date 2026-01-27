@@ -107,7 +107,7 @@ The magnet interface is connected to the MRC using an ethernet cable. The interf
 The gradients use 1/4" TRS audio connectors. Do not use 1/4" mono connectors, and do not insert or remove the connectors for the gradients when the board is powered. Doing so can damage the gradient drivers. The gradients are driven by H-bridge circuits to the supply voltage, current limited to 3A by three power resistors on the board. For this reason, neither contact for the gradients (Tip or Ring) is grounded. The Shield should not be connected to the gradient coil.
 
 ## USB 3.0
-Ask Joseph Feld.
+Support for direct baseband sample streaming with Steam-O-Scope firmware from [Joseph Feld](https://github.com/JosephFeld).
 
 ## Switch/Preamplifier Module
 <img src="Documentation/Photos/switch_preamp.jpg" width=50% height=50%>

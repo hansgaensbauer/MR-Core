@@ -8911,6 +8911,15 @@
 				)
 			)
 		)
+		(property "MPN" "XC7A35T-1FTG256C "
+			(at 77.47 97.79 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "A10"
 			(uuid "64875801-44d3-4847-8a35-bf7af41cf33a")
 		)
@@ -9736,6 +9745,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "XC7A35T-1FTG256C "
+			(at 209.55 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "A10"
@@ -10694,6 +10712,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "CRCW06031K00DHEBP "
+			(at 142.24 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"

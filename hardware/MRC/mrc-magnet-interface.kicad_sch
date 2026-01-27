@@ -1428,6 +1428,15 @@
 				)
 			)
 		)
+		(property "MPN" "RJHSE-5381 "
+			(at 113.03 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "1097dffa-fd0f-4401-b974-fd9d0904cd0e")
 		)
@@ -1600,6 +1609,15 @@
 				)
 			)
 		)
+		(property "MPN" "SDR03EZPD4701 "
+			(at 97.79 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c1d66bb9-e520-4d1b-bd1b-4dfd8b5a9b8f")
 		)
@@ -1737,6 +1755,15 @@
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "MPN" "SDR03EZPD4701 "
+			(at 97.79 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
