@@ -27,13 +27,12 @@ An FPGA Driven DAC + ADC for Magnetic Resonance, intended as a capable controlle
 - [AMD Vivado](https://www.xilinx.com/products/design-tools/vivado.html)
 
 </br>
-The hardware design Uses the [BioMEMS Parts](https://github.mit.edu/hgaens/BioMEMS-Parts) KiCAD Library:
+To set up the KiCAD Libraries:
 
-- Download the [BioMEMS Parts](https://github.mit.edu/hgaens/BioMEMS-Parts) repository 
-- Open KiCAD, go to Preferences -> Configure Paths..., and add a new Environment Variable called "BioMEMS" that points to the BioMEMS-Parts folder. 
-- Add the symbol library by selecting Preferences -> Manage Symbol Libraries... and selecting the BioMEMS.kicad_sym file in this repository. 
+- Open KiCAD, go to Preferences -> Configure Paths..., and add a new Environment Variable called "BioMEMS" that points to the hardware/Library folder. 
+- Add the symbol library by selecting Preferences -> Manage Symbol Libraries... and selecting the BioMEMS.kicad_sym file in this folder. 
 - Check that the library path shows up as "${BioMEMS}.kicad_sym". 
-- Add the footprint library by selecting Preferences -> Manage Footprint Libraries... and selecting the BioMEMS.pretty folder in this repository. 
+- Add the footprint library by selecting Preferences -> Manage Footprint Libraries... and selecting the BioMEMS.pretty folder in Library. 
 - Check that the library path uses the ${BioMEMS} variable.
 
 </br>
