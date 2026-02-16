@@ -15,8 +15,6 @@ This class encapsulates functions that interact with the MRC hardware.
 ### `Console(port = None, frequency = 21.65e6) -> None`
 Connect to and initialize the MRC console. This is the constructor for the MRC class.
 
-### `Console.run(sequence = None) -> None`
-
 **Parameters:**
 - **`port`**: (str) – Optional COM port of the system. If no port is provided, the class will attempt to autodetect the console.
 - **`frequency`**: (float) – Calibration center frequency for the system. This should be within 100kHz of the true magnet frequency.
