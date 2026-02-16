@@ -15,9 +15,14 @@ This class encapsulates functions that interact with the MRC hardware.
 ### `Console(port = None, frequency = 21.65e6) -> None`
 Connect to and initialize the MRC console. This is the constructor for the MRC class.
 
+### `Console.run(sequence = None) -> None`
+
 **Parameters:**
 - **`port`**: (str) – Optional COM port of the system. If no port is provided, the class will attempt to autodetect the console.
 - **`frequency`**: (float) – Calibration center frequency for the system. This should be within 100kHz of the true magnet frequency.
+
+### `Console.amp(amplitude) -> None`
+Set the system transmit amplitude. 
 
 **Parameters:**
 - **`amplitude`**: (float) – The system coil strength in units of DAC Counts/Hz. This value will be multiplied by the pulse amplitude defined in the pulseq experiment, which has units of Hz. The maximum DAC output is 2<sup>15</sup>, so the product of the system coil strength and the pulse amplitude must fall below this number.
