@@ -126,7 +126,7 @@ def compile_sequence(sequence, progfile):
     all_amplitudes = np.array([updates[time][0] for time in updates])
     all_phases = np.array([updates[time][1] for time in updates])
     amplitudes = (np.unique(np.abs(all_amplitudes).astype(np.uint16))) #.astype(np.uint16)
-    phases = np.unique(all_phases/np.pi*2**14).astype(np.int16)
+    phases = np.unique(all_phases/np.pi*2**15).astype(np.int16)
 
     assert len(amplitudes) <= 4
     assert len(phases) <= 4
@@ -138,7 +138,7 @@ def compile_sequence(sequence, progfile):
 
     for time in sorted(updates.keys()):
         _write_delay(time - lasttime)
-        _write_command(int(np.abs(updates[time][0])), int(updates[time][1] / np.pi * 2 ** 14), updates[time][2], updates[time][3], updates[time][4],
+        _write_command(int(np.abs(updates[time][0])), int(updates[time][1] / np.pi * 2 ** 15), updates[time][2], updates[time][3], updates[time][4],
                     amplitudes,
                     phases)
         lasttime = time
@@ -150,8 +150,8 @@ def compile_sequence(sequence, progfile):
     #detecting and stacking loops
     roll_loops = True
     if roll_loops:
-
-        for i in range(len(program)):
+        i = 0
+        while(i < len(program)):
             #calculate matches
             index = np.where(program[i:] == program[i])[0] + i #find matches and mask earlier matches
             if len(index) > 1:
@@ -159,24 +159,27 @@ def compile_sequence(sequence, progfile):
                 loopitrs = 0
                 looplen = index[j+1] - index[j]
                 while(j+1 < len(index) and
-                        index[j+1]+looplen < len(contents) and
-                        np.array_equal(contents[index[j]:index[j]+looplen], contents[index[j+1]:index[j+1]+looplen])):
+                        index[j+1]+looplen < len(program) and
+                        np.array_equal(program[index[j]:index[j]+looplen], program[index[j+1]:index[j+1]+looplen]) and
+                        loopitrs < 4094):
                     loopitrs += 1
                     j = j + 1
                 if loopitrs >= 1:
-                    for n in range(int((loopitrs-1)/4094)):
-                        #roll the loop
-                        newcontents = np.append(program[0:i], (0b0111 << 12) + 4094)
-                        newcontents = np.append(newcontents, program[i:i+looplen])
-                        newcontents = np.append(newcontents, (0b1011 << 12) + looplen)
-                        newcontents = np.append(newcontents, program[i+(4094+1)*looplen:])
-                        program = newcontents
+                    # loops = np.ceil(loopitrs/4094)
+                    # for n in range(int((loopitrs-1)/4094)):
+                    #     #roll the loop
+
+                    #     newcontents = np.append(program[0:i], (0b0111 << 12) + 4094)
+                    #     newcontents = np.append(newcontents, program[i:i+looplen])
+                    #     newcontents = np.append(newcontents, (0b1011 << 12) + looplen)
+                    #     newcontents = np.append(newcontents, program[i+(4094+1)*looplen:])
+                    #     program = newcontents
                     newcontents = np.append(program[0:i], (0b0111 << 12) + (loopitrs-1)%4094 + 1)
                     newcontents = np.append(newcontents, program[i:i+looplen])
                     newcontents = np.append(newcontents, (0b1011 << 12) + looplen)
-                    newcontents = np.append(newcontents, program[i+(loopitrs%4094+1)*looplen:])
+                    newcontents = np.append(newcontents, program[i+(loopitrs%4095+1)*looplen:])
                     program = newcontents
-                    break
+            i = i + 1
 
     program = make_jumps_relative(program)
     if isinstance(progfile, str):
@@ -202,7 +205,7 @@ def mrcdump(mrcfile):
         return np.array([int.from_bytes(rsarr[i], "little") for i in range(len(rsarr))])
 
     instructions = _read_bin_file(mrcfile)
-    print("Duration: %d" % int(instructions[0])*16)
+    print("Duration: %d" % (int(instructions[0])*16))
 
     print("Statics:")
     for i in range(4):

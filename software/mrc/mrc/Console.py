@@ -114,6 +114,18 @@ class Console:
         self.read_serial()
         time.sleep(0.1)
 
+    def attenuation(self, att):
+        print("Setting Attenuator to " + str(att) + " dB")
+        self.ser.write(("att " + str(att)).encode('utf-8'))
+        self.read_serial()
+        time.sleep(0.1)
+
+    def select_well(self, well):
+        print("Selecting Well " + str(well))
+        self.ser.write(("well " + str(well)).encode('utf-8'))
+        self.read_serial()
+        time.sleep(0.1)
+
     def freq(self, freq):
         print("Setting Frequency to " + str(freq))
         self.ser.write(("freq " + str(freq)).encode('utf-8'))

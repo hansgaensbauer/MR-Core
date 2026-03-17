@@ -27,6 +27,8 @@ uint8_t Configure_MRC(void){
 	HAL_GPIO_WritePin(FPGA_SEN_GPIO_Port, FPGA_SEN_Pin, GPIO_PIN_SET);  //deactivate CS
 	HAL_Delay(1);
 	Reset_FPGA();
+	Set_Attenuator(0);
+	Set_Well(8);
 	return SUCCESS;
 }
 
@@ -61,6 +63,35 @@ uint8_t Reset_FPGA(void){
 uint8_t fake_cmplx_mag_sqrd(uint16_t * src, uint16_t * dst, uint32_t nsamples){
 	for(int i = 0; i < nsamples; i++){
 		dst[i] = src[2*i]*src[2*i]+src[2*i+1]*src[2*i+1];
+	}
+	return SUCCESS;
+}
+
+uint8_t Set_Attenuator(uint8_t attenuation){
+	HAL_GPIO_WritePin(ATT_LE_GPIO_Port, ATT_LE_Pin, GPIO_PIN_RESET);
+	for(int i = 0; i < 6; i++){
+		HAL_GPIO_WritePin(ATT_SRCLK_GPIO_Port, ATT_SRCLK_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(ATT_SER_GPIO_Port, ATT_SER_Pin, (attenuation << i) & 0b00010000);
+		HAL_Delay(1);
+		HAL_GPIO_WritePin(ATT_SRCLK_GPIO_Port, ATT_SRCLK_Pin, GPIO_PIN_SET);
+		HAL_Delay(1);
+	}
+	HAL_GPIO_WritePin(ATT_SRCLK_GPIO_Port, ATT_SRCLK_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(ATT_LE_GPIO_Port, ATT_LE_Pin, GPIO_PIN_SET);
+	HAL_Delay(1);
+	HAL_GPIO_WritePin(ATT_LE_GPIO_Port, ATT_LE_Pin, GPIO_PIN_RESET);
+	return SUCCESS;
+}
+
+uint8_t Set_Well(uint8_t well){
+	HAL_GPIO_WritePin(MAG_IO0_GPIO_Port, MAG_IO0_Pin, GPIO_PIN_SET); //Force clear for 96WP
+	HAL_Delay(1);
+	HAL_GPIO_WritePin(MAG_IO0_GPIO_Port, MAG_IO0_Pin, GPIO_PIN_RESET); //End of strobe
+	for(int i = 0; i < well-1; i++){
+		HAL_GPIO_WritePin(MAG_IO1_GPIO_Port, MAG_IO1_Pin, GPIO_PIN_SET); //Up
+		HAL_Delay(1);
+		HAL_GPIO_WritePin(MAG_IO1_GPIO_Port, MAG_IO1_Pin, GPIO_PIN_RESET); //End of strobe
+		HAL_Delay(1);
 	}
 	return SUCCESS;
 }

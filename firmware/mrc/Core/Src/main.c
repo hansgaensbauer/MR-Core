@@ -71,6 +71,8 @@ NAND_HandleTypeDef hnand1;
 char cdc_rx_buf[64];
 uint16_t sequence_buffer[512];
 uint16_t codelength;
+uint8_t well;
+uint8_t att;
 uint16_t seq_num_samples;
 uint8_t * cdc_rx_dst;
 
@@ -81,6 +83,8 @@ const char CMD_TRIG[64] = "trigger";
 const char CMD_LOAD[64] = "load";
 const char CMD_CAL_FREQ[64] = "calfreq";
 const char CMD_SET_AMP[64] = "amp";
+const char CMD_SET_ATT[64] = "att";
+const char CMD_SET_WELL[64] = "well";
 const char CMD_SET_FREQ[64] = "freq";
 const char CMD_RST[64] = "reset";
 volatile unsigned char usb_rx_flag;
@@ -151,6 +155,9 @@ int main(void)
 
   LTC2145_Init();
   cdc_rx_dst = (uint8_t *) cdc_rx_buf;
+
+  HAL_GPIO_WritePin(DAC_TXEN_GPIO_Port, DAC_TXEN_Pin, GPIO_PIN_SET);
+//  DAC5687_Pattern_Test();
   HAL_Delay(3000); //wait for FPGA to initialize
   Configure_MRC();
 
@@ -199,10 +206,10 @@ int main(void)
 			  sequence_amps[3] = sequence_buffer[8];
 
 			  //Scale the sequence amps
-			  sequence_buffer[5] = sequence_amps[0] * amp_scale;
-			  sequence_buffer[6] = sequence_amps[1] * amp_scale;
-			  sequence_buffer[7] = sequence_amps[2] * amp_scale;
-			  sequence_buffer[8] = sequence_amps[3] * amp_scale;
+			  sequence_buffer[5] = (sequence_amps[0] * amp_scale)/100;
+			  sequence_buffer[6] = (sequence_amps[1] * amp_scale)/100;
+			  sequence_buffer[7] = (sequence_amps[2] * amp_scale)/100;
+			  sequence_buffer[8] = (sequence_amps[3] * amp_scale)/100;
 
 			  Reset_FPGA();
 			  Load_Sequence(sequence_buffer, codelength/2);
@@ -213,15 +220,27 @@ int main(void)
 			  Transfer_Status("Done");
 		  }
 		  else if(strncmp(cdc_rx_buf,CMD_SET_AMP, 3) == 0){
-			  amp_scale = atoi(cdc_rx_buf + 4)/100;
+			  amp_scale = atoi(cdc_rx_buf + 4);
 
-			  sequence_buffer[5] = sequence_amps[0] * amp_scale;
-			  sequence_buffer[6] = sequence_amps[1]* amp_scale;
-			  sequence_buffer[7] = sequence_amps[2] * amp_scale;
-			  sequence_buffer[8] = sequence_amps[3] * amp_scale;
+			  sequence_buffer[5] = (sequence_amps[0] * amp_scale)/100;
+			  sequence_buffer[6] = (sequence_amps[1]* amp_scale)/100;
+			  sequence_buffer[7] = (sequence_amps[2] * amp_scale)/100;
+			  sequence_buffer[8] = (sequence_amps[3] * amp_scale)/100;
 			  Reset_FPGA();
 			  Load_Sequence(sequence_buffer, codelength/2);
 			  MRC_Set_Freq(frequency);
+			  Transfer_Status("Done");
+		  }
+		  else if(strncmp(cdc_rx_buf,CMD_SET_ATT, 3) == 0){
+			  att = atoi(cdc_rx_buf + 4);
+
+			  Set_Attenuator(att);
+			  Transfer_Status("Done");
+		  }
+		  else if(strncmp(cdc_rx_buf,CMD_SET_WELL, 4) == 0){
+			  well = atoi(cdc_rx_buf + 5);
+
+			  Set_Well(well);
 			  Transfer_Status("Done");
 		  }
 		  else if(strncmp(cdc_rx_buf,CMD_SET_FREQ, 4) == 0){
@@ -662,8 +681,8 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(FPGA_SEN_GPIO_Port, FPGA_SEN_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOG, MC_LED1_Pin|MC_LED2_Pin|UCIO0_Pin|UCIO1_Pin
-                          |UCIO2_Pin|UCIO3_Pin|UCIO4_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOG, MC_LED1_Pin|MC_LED2_Pin|UCIO0_Pin|ATT_SER_Pin
+                          |ATT_LE_Pin|UCIO3_Pin|UCIO4_Pin|ATT_SRCLK_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pins : MAG_IO0_Pin MAG_IO1_Pin DAC_NRST_Pin DAC_SLEEP_Pin
                            DAC_TXEN_Pin */
@@ -701,10 +720,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(FPGA_SEN_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : MC_LED1_Pin MC_LED2_Pin UCIO0_Pin UCIO1_Pin
-                           UCIO2_Pin UCIO3_Pin UCIO4_Pin */
-  GPIO_InitStruct.Pin = MC_LED1_Pin|MC_LED2_Pin|UCIO0_Pin|UCIO1_Pin
-                          |UCIO2_Pin|UCIO3_Pin|UCIO4_Pin;
+  /*Configure GPIO pins : MC_LED1_Pin MC_LED2_Pin UCIO0_Pin ATT_SER_Pin
+                           ATT_LE_Pin UCIO3_Pin UCIO4_Pin ATT_SRCLK_Pin */
+  GPIO_InitStruct.Pin = MC_LED1_Pin|MC_LED2_Pin|UCIO0_Pin|ATT_SER_Pin
+                          |ATT_LE_Pin|UCIO3_Pin|UCIO4_Pin|ATT_SRCLK_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

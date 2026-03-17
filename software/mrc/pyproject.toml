@@ -4,14 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mrc"
-version = "1.0.0"
+version = "1.0.5"
 dependencies = [
     "pypulseq",
     "numpy",
     "scipy",
-    "pyserial",
-    "importlib"
+    "pyserial"
 ]
 
 [tool.setuptools.packages.find]
-where = [".","mrc"]
+where = ["."]

@@ -263,20 +263,20 @@ static int8_t CDC_Control_FS(uint8_t cmd, uint8_t* pbuf, uint16_t length)
 static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
 {
   /* USER CODE BEGIN 6 */
-//  USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
-//  USBD_CDC_ReceivePacket(&hUsbDeviceFS);
-//  return (USBD_OK);
+	//  USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
+	//  USBD_CDC_ReceivePacket(&hUsbDeviceFS);
+	//  return (USBD_OK);
 
-  USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
+	  USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
 
-   uint8_t len = (uint8_t)*Len;
-   memcpy(cdc_rx_dst, Buf, len);  // copy the data to the buffer
-   memset(Buf, '\0', len);   // clear the Buf also
-   usb_rx_flag = 1;
+	   uint8_t len = (uint8_t)*Len;
+	   memcpy(cdc_rx_dst, Buf, len);  // copy the data to the buffer
+	   memset(Buf, '\0', len);   // clear the Buf also
+	   usb_rx_flag = 1;
 
-   USBD_CDC_ReceivePacket(&hUsbDeviceFS);
+	   USBD_CDC_ReceivePacket(&hUsbDeviceFS);
 
-   return (USBD_OK);
+	   return (USBD_OK);
   /* USER CODE END 6 */
 }
 

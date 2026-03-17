@@ -84,16 +84,18 @@ void DmaXferCompleteCallback(DMA_HandleTypeDef *hdma);        // Data Transfer C
 #define MC_LED2_GPIO_Port GPIOG
 #define UCIO0_Pin GPIO_PIN_6
 #define UCIO0_GPIO_Port GPIOG
-#define UCIO1_Pin GPIO_PIN_7
-#define UCIO1_GPIO_Port GPIOG
-#define UCIO2_Pin GPIO_PIN_8
-#define UCIO2_GPIO_Port GPIOG
+#define ATT_SER_Pin GPIO_PIN_7
+#define ATT_SER_GPIO_Port GPIOG
+#define ATT_LE_Pin GPIO_PIN_8
+#define ATT_LE_GPIO_Port GPIOG
 #define FIFO_FLAG_Pin GPIO_PIN_11
 #define FIFO_FLAG_GPIO_Port GPIOC
 #define UCIO3_Pin GPIO_PIN_9
 #define UCIO3_GPIO_Port GPIOG
 #define UCIO4_Pin GPIO_PIN_10
 #define UCIO4_GPIO_Port GPIOG
+#define ATT_SRCLK_Pin GPIO_PIN_12
+#define ATT_SRCLK_GPIO_Port GPIOG
 
 /* USER CODE BEGIN Private defines */
 

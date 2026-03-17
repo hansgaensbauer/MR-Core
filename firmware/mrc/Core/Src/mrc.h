@@ -53,6 +53,8 @@ uint8_t Transfer_Status(char * format, ...);
 uint8_t MRC_Set_Freq(float freq);
 uint8_t Reset_FPGA(void);
 uint8_t MRC_Calibrator(float freq);
+uint8_t Set_Attenuator(uint8_t attenuation);
+uint8_t Set_Well(uint8_t well);
 uint8_t fake_cmplx_mag_sqrd(uint16_t * src, uint16_t * dst, uint32_t nsamples);
 int score_cal(float frequency, uint16_t amp);
 float calibrate_frequency(float start_frequency);
